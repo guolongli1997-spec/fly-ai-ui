@@ -1,0 +1,83 @@
+name: Feature request
+description: A new capability, integration, or API for assistant-ui
+type: Feature
+labels: ["enhancement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A non-trivial feature needs an issue a maintainer has agreed to before a pull request, so this is the place to settle direction.
+
+  - type: dropdown
+    attributes:
+      label: Kind
+      options:
+        - New capability in an existing package
+        - New integration (provider, framework, or protocol)
+        - Parity (one runtime or platform has it, another does not)
+        - New component, example or template
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Problem and use case
+      description: What you are building and where the current API stops you.
+      placeholder: I'm building ... and need to ... but currently ...
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Proposed API or behavior
+      description: Show how you would like to call it. A rough snippet is enough.
+      render: tsx
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Area
+      options:
+        - Runtime / Core
+        - Thread Management
+        - Streaming (assistant-stream)
+        - Attachments / Files
+        - Cloud (assistant-cloud)
+        - React / UI Components
+        - React Native
+        - Terminal (Ink)
+        - Vue / Svelte
+        - Store / Tap
+        - Content Rendering (Markdown, Syntax Highlighting)
+        - Rich Text / Composer (Lexical)
+        - Generative UI
+        - MCP
+        - Provider Adapters
+        - Performance
+        - CLI / Scaffolding
+        - DevTools / Observability
+        - Documentation
+        - Unsure
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Upstream reference
+      description: For an integration, link the SDK or protocol spec and the version you target.
+
+  - type: textarea
+    attributes:
+      label: Workaround or alternatives
+      description: What you do today, and other designs you ruled out.
+
+  - type: dropdown
+    attributes:
+      label: Would you send a pull request?
+      options:
+        - "Yes, once a maintainer confirms the direction"
+        - "No"
+    validations:
+      required: true

@@ -1,0 +1,160 @@
+name: Bug report
+description: Report an issue to help us improve assistant-ui
+type: Bug
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Install, build and upgrade failures, CLI, registry and template problems, and documentation problems each have their own form. Vulnerabilities go to a [private advisory](https://github.com/assistant-ui/assistant-ui/security/advisories/new), never a public issue.
+
+  - type: checkboxes
+    attributes:
+      label: Checklist
+      description: Please confirm before submitting.
+      options:
+        - label: I have searched existing issues and this is not a duplicate
+          required: true
+        - label: This is a bug, not a usage question (use [Discord](https://discord.gg/S9dwgCNEFs) for questions)
+          required: true
+
+  - type: textarea
+    attributes:
+      label: Environment info
+      description: Run `npx assistant-ui info` in your project and paste the output here. Add the browser or device if the bug depends on it.
+      placeholder: |
+        Environment:
+          OS:               macOS 15.3 (arm64)
+          Node.js:          v22.14.0
+          Package Manager:  pnpm 10.32.1
+          Framework:        Next.js 15.3.1
+
+        Packages:
+          @assistant-ui/react          0.12.15
+          ...
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Affected area(s)
+      multiple: true
+      options:
+        - Runtime / Core
+        - Thread Management
+        - Streaming (assistant-stream)
+        - Attachments / Files
+        - Cloud (assistant-cloud)
+        - React / UI Components
+        - React Native
+        - Terminal (Ink)
+        - Vue / Svelte
+        - Store / Tap
+        - Content Rendering (Markdown, Syntax Highlighting)
+        - Rich Text / Composer (Lexical)
+        - Generative UI
+        - MCP
+        - Provider Adapters
+        - Styles (tw-shimmer)
+        - Python
+        - Performance
+        - Accessibility
+        - DevTools / Observability
+        - Unsure
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Runtime adapter in use
+      description: Which runtime hook are you using?
+      options:
+        - useLocalRuntime
+        - useExternalStoreRuntime
+        - useCloudRuntime
+        - useAISDKRuntime / useChatRuntime
+        - useLangGraphRuntime
+        - useStreamRuntime (LangChain)
+        - useAgUiRuntime
+        - useA2ARuntime
+        - useAdkRuntime (Google ADK)
+        - useOpenCodeRuntime
+        - usePiRuntime
+        - useEveAgentRuntime
+        - useDataStreamRuntime
+        - useAssistantTransportRuntime
+        - Other / Custom
+        - Not applicable
+        - Unsure
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Reproduction
+      description: A link to a repository or sandbox, or a self-contained snippet a maintainer can run on the versions above. If nobody ran it yet, give the snippet you expect to fail. A report we cannot reproduce is closed.
+      placeholder: https://github.com/you/repro, https://stackblitz.com/..., or a complete component and route handler
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Set up runtime with `useXxxRuntime(...)`
+        2. Send a message with ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected vs actual behavior
+      placeholder: |
+        Expected: ...
+        Actual: ...
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Last version where this worked
+      description: Leave empty if it never worked or you do not know.
+      placeholder: "@assistant-ui/react 0.12.14"
+
+  - type: dropdown
+    attributes:
+      label: How was this found?
+      options:
+        - I hit it in my app
+        - I hit it in an example or template from this repo
+        - Reading the source
+        - Automated audit or agent
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Was the reproduction run?
+      options:
+        - Yes, it fails as described
+        - No, nobody has run it yet
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Error output
+      render: text
+      description: Stack trace or console output as text, not a screenshot. Please remove any secrets.
+
+  - type: textarea
+    attributes:
+      label: Suspected cause or workaround
+      description: Optional. Link exact source lines if you traced it, and say whether you verified the fix.
+
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: Screenshots, related issues, or anything else that might help.

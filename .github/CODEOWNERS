@@ -1,0 +1,25 @@
+# Generated from .github/review-policy.json by scripts/sync-review-policy.mjs --write-codeowners; edit the policy, not this file.
+
+# Reactivity core
+/packages/tap/ @assistant-ui/owners
+/packages/store/ @assistant-ui/owners
+/apps/docs/content/docs/tap/ @assistant-ui/owners
+/apps/docs/content/docs/store/ @assistant-ui/owners
+
+# Wire protocol
+/packages/assistant-stream/ @assistant-ui/owners
+
+# Public API
+/api-surface/*.ts @assistant-ui/owners
+/api-surface/assistant-ui__docs-theme.ts
+
+# CI and policy
+/.github/ @assistant-ui/owners
+/CONTRIBUTING.md @assistant-ui/owners
+/AGENTS.md @assistant-ui/owners
+/scripts/review-tier.mjs @assistant-ui/owners
+/scripts/diff-api-surface.mjs @assistant-ui/owners
+/scripts/review-coverage-advice.mjs @assistant-ui/owners
+/scripts/sync-review-policy.mjs @assistant-ui/owners
+/scripts/review-health.mjs @assistant-ui/owners
+/scripts/lib/review-*.mjs @assistant-ui/owners
